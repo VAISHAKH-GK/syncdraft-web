@@ -172,21 +172,42 @@
   }
 }
 
-/* Tiptap editor prose styles */
-.prose h1 { @apply text-3xl font-bold mb-4 mt-6; }
-.prose h2 { @apply text-2xl font-bold mb-3 mt-5; }
-.prose h3 { @apply text-xl font-semibold mb-2 mt-4; }
-.prose p  { @apply mb-3 leading-7; }
-.prose ul { @apply list-disc pl-6 mb-3 space-y-1; }
-.prose ol { @apply list-decimal pl-6 mb-3 space-y-1; }
-.prose blockquote { @apply border-l-4 border-border pl-4 italic text-muted-foreground my-4; }
-.prose code { @apply rounded bg-muted px-1.5 py-0.5 text-sm font-mono; }
-.prose pre  { @apply rounded-lg bg-muted p-4 mb-4 overflow-x-auto; }
-.prose pre code { @apply bg-transparent p-0; }
-.prose hr  { @apply border-border my-6; }
+/* ── Tiptap editor ── */
+.prose-editor { @apply text-base leading-7 text-foreground; }
+
+.prose-editor h1 { @apply text-3xl font-bold mt-8 mb-3 text-foreground; }
+.prose-editor h2 { @apply text-2xl font-semibold mt-7 mb-2 text-foreground; }
+.prose-editor h3 { @apply text-xl font-semibold mt-6 mb-2 text-foreground; }
+
+.prose-editor p  { @apply mb-3 leading-7; }
+.prose-editor p + p { @apply mt-0; }
+
+.prose-editor ul { @apply list-disc pl-6 mb-3 space-y-1; }
+.prose-editor ol { @apply list-decimal pl-6 mb-3 space-y-1; }
+.prose-editor li { @apply leading-7; }
+
+.prose-editor strong { @apply font-semibold text-foreground; }
+.prose-editor em     { @apply italic; }
+.prose-editor s      { @apply line-through text-muted-foreground; }
+
+.prose-editor blockquote {
+  @apply border-l-[3px] border-primary/60 pl-4 italic text-muted-foreground my-5;
+}
+
+.prose-editor code {
+  @apply rounded-md bg-muted px-1.5 py-0.5 text-sm font-mono text-foreground;
+}
+.prose-editor pre {
+  @apply rounded-xl bg-muted/80 border border-border p-5 mb-5 overflow-x-auto;
+}
+.prose-editor pre code { @apply bg-transparent p-0 text-sm; }
+
+.prose-editor hr {
+  @apply border-none border-t border-border my-8;
+}
 
 /* Placeholder */
 .tiptap p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
-  @apply text-muted-foreground pointer-events-none float-left h-0;
+  @apply text-muted-foreground/50 pointer-events-none float-left h-0 text-base;
 }

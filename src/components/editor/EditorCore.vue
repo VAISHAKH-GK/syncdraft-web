@@ -7,13 +7,13 @@ const editor = useEditor({
   extensions: [
     StarterKit,
     Placeholder.configure({
-      placeholder: 'Start writing…',
+      placeholder: 'Start writing, or press / for commands…',
     }),
   ],
   content: '',
   editorProps: {
     attributes: {
-      class: 'prose prose-invert max-w-none focus:outline-none min-h-[70vh] px-2 py-4',
+      class: 'prose-editor focus:outline-none min-h-[80vh]',
     },
   },
 })
@@ -22,7 +22,5 @@ defineExpose({ editor })
 </script>
 
 <template>
-  <div class="w-full">
-    <EditorContent :editor="editor" />
-  </div>
+  <EditorContent :editor="editor" />
 </template>
