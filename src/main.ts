@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router/index.ts'
+import '@/assets/styles/globals.css'
+import router from './router'
+
+document.documentElement.classList.add('dark')
 
 createApp(App).use(router).mount("#app")
